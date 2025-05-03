@@ -5,6 +5,7 @@ import { validateStep } from '../utils/validation';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import { ChevronRight } from 'lucide-react';
 
 const Step1Form: React.FC = () => {
   const { formData, updateFormData, setCurrentStep } = useFormContext();
@@ -89,9 +90,10 @@ const Step1Form: React.FC = () => {
         <Button 
           type="button"
           onClick={handleContinue}
-          className="bg-cleanroom-500 hover:bg-cleanroom-600 text-white"
+          className="bg-cleanroom-500 hover:bg-cleanroom-600 text-white rounded-full p-2 md:p-3 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-x-1 group"
+          aria-label="Continue to next step"
         >
-          Continue
+          <ChevronRight className="h-6 w-6 md:h-7 md:w-7 transition-transform group-hover:scale-110" />
         </Button>
       </div>
     </div>
