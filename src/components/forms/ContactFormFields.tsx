@@ -7,6 +7,8 @@ interface ContactFormFieldProps {
   fullName: string;
   phoneNumber: string;
   projectLocation: string;
+  businessEmail: string;
+  companyName: string;
   errors: Record<string, string>;
   updateFormData: (data: any) => void;
 }
@@ -15,6 +17,8 @@ const ContactFormFields: React.FC<ContactFormFieldProps> = ({
   fullName,
   phoneNumber,
   projectLocation,
+  businessEmail,
+  companyName,
   errors,
   updateFormData,
 }) => {
@@ -56,7 +60,7 @@ const ContactFormFields: React.FC<ContactFormFieldProps> = ({
           id="businessEmail"
           type="email"
           placeholder="your.name@company.com"
-          value={formData.businessEmail || ""}
+          value={businessEmail}
           onChange={(e) => updateFormData({ businessEmail: e.target.value })}
           className="w-full"
         />
@@ -71,7 +75,7 @@ const ContactFormFields: React.FC<ContactFormFieldProps> = ({
           id="companyName"
           type="text"
           placeholder="Your company name"
-          value={formData.companyName || ""}
+          value={companyName}
           onChange={(e) => updateFormData({ companyName: e.target.value })}
           className="w-full"
         />
