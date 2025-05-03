@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import { FormProvider, useFormContext } from '../contexts/FormContext';
 import FormStepper from './FormStepper';
 import Step1Form from './Step1Form';
 import Step2Form from './Step2Form';
 import Step3Form from './Step3Form';
-import Step4Form from './Step4Form';
 import SuccessMessage from './SuccessMessage';
 import EmailVerificationGate from './EmailVerificationGate';
 
@@ -32,7 +30,6 @@ const FormContent: React.FC = () => {
         {currentStep === 1 && <Step1Form />}
         {currentStep === 2 && <Step2Form />}
         {currentStep === 3 && <Step3Form />}
-        {currentStep === 4 && <Step4Form />}
       </div>
     </div>
   );
@@ -43,11 +40,11 @@ const CleanroomQuizForm: React.FC = () => {
     <div className="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-gray-800 animate-fade-in">
-          Modular Cleanroom Quote Request
+          Fan Filter Unit Quote Request
         </h1>
         <div className="w-20 h-1 bg-cleanroom-500 mx-auto mt-4 mb-4 rounded-full"></div>
         <p className="text-gray-600 mt-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Complete this short questionnaire to receive a customized quote for your modular cleanroom project.
+          Complete this short form to receive a customized quote for your Fan Filter Unit (FFU) needs.
         </p>
       </div>
       

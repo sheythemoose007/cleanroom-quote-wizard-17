@@ -70,7 +70,7 @@ const EmailVerificationGate: React.FC<EmailVerificationGateProps> = ({ onVerifie
         </div>
       </div>
       
-      <h2 className="text-2xl font-bold mb-2 text-gray-800">UNLOCK MODULAR CLEANROOM QUOTE REQUEST</h2>
+      <h2 className="text-2xl font-bold mb-2 text-gray-800">UNLOCK FAN FILTER UNIT QUOTE REQUEST</h2>
       <p className="text-gray-600 mb-8">Please verify your business email to access our customized quote wizard.</p>
       
       <div className="space-y-6">

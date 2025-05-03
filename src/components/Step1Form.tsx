@@ -10,20 +10,20 @@ const Step1Form: React.FC = () => {
   const { formData, updateFormData, setCurrentStep } = useFormContext();
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const applicationOptions = [
-    'Manufacturing',
-    'Assembly',
-    'Pharmaceutical Packaging',
-    'Research Lab',
-    'Other'
+  const quantityOptions = [
+    '1-10',
+    '11-50',
+    '51-100',
+    '100+',
+    'Unsure/Budgetary'
   ];
 
-  const isoOptions = [
-    'ISO 5',
-    'ISO 6',
-    'ISO 7',
-    'ISO 8',
-    'Multiple/Zoned',
+  const sizeOptions = [
+    '2\'x2\'',
+    '2\'x3\'',
+    '2\'x4\'',
+    '4\'x4\'',
+    'Custom/Other',
     'Unsure'
   ];
 
@@ -41,46 +41,46 @@ const Step1Form: React.FC = () => {
 
   return (
     <div className="animate-fade-in">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">Scope & Classification</h2>
+      <h2 className="text-2xl font-bold mb-6 text-gray-800">Quantity & Basic Specs</h2>
       
       <div className="mb-6">
-        <h3 className="text-lg font-medium mb-3 text-gray-700">What is the primary application for the modular cleanroom?</h3>
+        <h3 className="text-lg font-medium mb-3 text-gray-700">How many FFUs do you anticipate needing?</h3>
         <div className="grid gap-4">
           <RadioGroup 
-            value={formData.primaryApplication}
-            onValueChange={(value) => updateFormData({ primaryApplication: value })}
+            value={formData.ffuQuantity}
+            onValueChange={(value) => updateFormData({ ffuQuantity: value })}
             className="grid grid-cols-1 md:grid-cols-2 gap-2"
           >
-            {applicationOptions.map((option) => (
+            {quantityOptions.map((option) => (
               <div key={option} className="flex items-center space-x-2">
-                <RadioGroupItem value={option} id={`app-${option}`} />
-                <Label htmlFor={`app-${option}`} className="text-base">{option}</Label>
+                <RadioGroupItem value={option} id={`quantity-${option}`} />
+                <Label htmlFor={`quantity-${option}`} className="text-base">{option}</Label>
               </div>
             ))}
           </RadioGroup>
-          {errors.primaryApplication && (
-            <p className="text-red-500 text-sm mt-1">{errors.primaryApplication}</p>
+          {errors.ffuQuantity && (
+            <p className="text-red-500 text-sm mt-1">{errors.ffuQuantity}</p>
           )}
         </div>
       </div>
       
       <div className="mb-8">
-        <h3 className="text-lg font-medium mb-3 text-gray-700">What is the required ISO classification?</h3>
+        <h3 className="text-lg font-medium mb-3 text-gray-700">What standard size(s) are you considering?</h3>
         <div className="grid gap-4">
           <RadioGroup 
-            value={formData.isoClassification}
-            onValueChange={(value) => updateFormData({ isoClassification: value })}
+            value={formData.ffuSize}
+            onValueChange={(value) => updateFormData({ ffuSize: value })}
             className="grid grid-cols-1 md:grid-cols-3 gap-2"
           >
-            {isoOptions.map((option) => (
+            {sizeOptions.map((option) => (
               <div key={option} className="flex items-center space-x-2">
-                <RadioGroupItem value={option} id={`iso-${option}`} />
-                <Label htmlFor={`iso-${option}`} className="text-base">{option}</Label>
+                <RadioGroupItem value={option} id={`size-${option}`} />
+                <Label htmlFor={`size-${option}`} className="text-base">{option}</Label>
               </div>
             ))}
           </RadioGroup>
-          {errors.isoClassification && (
-            <p className="text-red-500 text-sm mt-1">{errors.isoClassification}</p>
+          {errors.ffuSize && (
+            <p className="text-red-500 text-sm mt-1">{errors.ffuSize}</p>
           )}
         </div>
       </div>

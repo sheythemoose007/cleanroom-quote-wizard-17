@@ -9,13 +9,12 @@ const SuccessMessage: React.FC = () => {
   const handleReset = () => {
     // Reset form to initial state
     updateFormData({
-      primaryApplication: '',
-      isoClassification: '',
-      cleanroomSize: '',
-      layoutRequirements: '',
-      existingBuilding: '',
-      ceilingHeight: '',
-      completionTimeframe: '',
+      ffuQuantity: '',
+      ffuSize: '',
+      filtrationLevel: '',
+      airflowRequirements: '',
+      specificFeatures: [],
+      application: '',
       fullName: '',
       businessEmail: '',
       phoneNumber: '',
@@ -37,13 +36,13 @@ const SuccessMessage: React.FC = () => {
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Quote Request Submitted!</h2>
       
       <p className="text-lg text-gray-600 mb-4">
-        Thank you, {formData.fullName}! Your modular cleanroom quote request has been successfully submitted.
+        Thank you, {formData.fullName}! Your Fan Filter Unit quote request has been successfully submitted.
       </p>
       
       <p className="text-md text-gray-600 mb-8">
         A member of our team will contact you at {formData.businessEmail} within 1-2 business days to discuss your 
-        {' '}{formData.cleanroomSize}{' '}
-        {formData.isoClassification} cleanroom requirements.
+        {' '}{formData.ffuSize}{' '}
+        FFU requirements for your {formData.application.toLowerCase()} project.
       </p>
 
       <div className="flex justify-center">

@@ -11,9 +11,9 @@ const Index = () => {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container px-4 mx-auto">
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">Cleanroom Quote Wizard</h1>
+          <h1 className="text-4xl font-bold text-gray-800 mb-2">Fan Filter Unit Quote Wizard</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A customizable, embeddable qualification form for modular cleanroom inquiries
+            A customizable, embeddable configuration form for requesting Fan Filter Unit quotes
           </p>
         </header>
 
@@ -36,9 +36,9 @@ const Index = () => {
         
         <div className="mt-16 max-w-4xl mx-auto text-center">
           <Separator className="mb-10" />
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Ready to integrate with your website?</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Ready to integrate with your product page?</h2>
           <p className="text-gray-600 mb-6">
-            Follow the embed instructions to add this form to your cleanroom product pages and start receiving qualified leads.
+            Follow the embed instructions to add this form to your Fan Filter Unit product pages and start receiving qualified quote requests.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

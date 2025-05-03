@@ -9,10 +9,9 @@ interface StepItem {
 }
 
 const steps: StepItem[] = [
-  { number: 1, title: 'Scope & Classification' },
-  { number: 2, title: 'Size & Layout' },
-  { number: 3, title: 'Facility & Timing' },
-  { number: 4, title: 'Contact Information' },
+  { number: 1, title: 'Quantity & Basic Specs' },
+  { number: 2, title: 'Performance & Features' },
+  { number: 3, title: 'Application & Contact' },
 ];
 
 const FormStepper: React.FC = () => {

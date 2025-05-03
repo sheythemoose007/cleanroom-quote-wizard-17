@@ -38,7 +38,11 @@ export const validatePhoneNumber = (phone: string): boolean => {
 };
 
 // Form field validation
-export const validateField = (name: string, value: string | boolean): string | null => {
+export const validateField = (name: string, value: string | boolean | string[]): string | null => {
+  if (name === 'specificFeatures' && Array.isArray(value)) {
+    return null; // Features are optional
+  }
+  
   if (typeof value === 'string' && value.trim() === '') {
     return 'This field is required';
   }
@@ -68,16 +72,10 @@ export const validateStep = (step: number, formData: any): Record<string, string
   
   // Fields to validate for each step
   const stepFields: Record<number, string[]> = {
-    1: ['primaryApplication', 'isoClassification'],
-    2: ['cleanroomSize', 'layoutRequirements'],
-    3: ['existingBuilding', 'completionTimeframe'],
-    4: ['fullName', 'businessEmail', 'phoneNumber', 'companyName', 'projectLocation', 'consentGiven']
+    1: ['ffuQuantity', 'ffuSize'],
+    2: ['filtrationLevel'],
+    3: ['application', 'fullName', 'businessEmail', 'phoneNumber', 'companyName', 'projectLocation', 'consentGiven']
   };
-  
-  // Special case for ceiling height - only required if existingBuilding is "Yes"
-  if (step === 3 && formData.existingBuilding === 'Yes') {
-    stepFields[3].push('ceilingHeight');
-  }
   
   // Validate each field for the current step
   stepFields[step]?.forEach(field => {

@@ -37,18 +37,18 @@ const EmbedInstructions: React.FC = () => {
   useEffect(() => {
     const updatedIframeCode = `<iframe 
   src="${appUrl}/embed?theme=${encodeURIComponent(selectedColor)}" 
-  title="Cleanroom Quote Request Form" 
+  title="Fan Filter Unit Quote Request Form" 
   width="${width}px" 
   height="${height}px" 
   style="border: none; max-width: 100%; margin: 0 auto; border-top: 4px solid ${selectedColor};" 
   allowfullscreen></iframe>`;
 
-    const updatedScriptCode = `<div id="cleanroom-quote-form"></div>
+    const updatedScriptCode = `<div id="ffu-quote-form"></div>
 <script>
   (function() {
     var iframe = document.createElement('iframe');
     iframe.src = "${appUrl}/embed?theme=${encodeURIComponent(selectedColor)}";
-    iframe.title = "Cleanroom Quote Request Form";
+    iframe.title = "Fan Filter Unit Quote Request Form";
     iframe.style.border = "none";
     iframe.style.width = "${width}px";
     iframe.style.height = "${height}px";
@@ -56,7 +56,7 @@ const EmbedInstructions: React.FC = () => {
     iframe.style.margin = "0 auto";
     iframe.style.borderTop = "4px solid ${selectedColor}";
     
-    var container = document.getElementById('cleanroom-quote-form');
+    var container = document.getElementById('ffu-quote-form');
     container.appendChild(iframe);
   })();
 </script>`;
