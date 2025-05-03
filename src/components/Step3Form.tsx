@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useFormContext } from '../contexts/FormContext';
 import { validateStep } from '../utils/validation';
@@ -129,6 +128,8 @@ const Step3Form: React.FC = () => {
           fullName={formData.fullName}
           phoneNumber={formData.phoneNumber}
           projectLocation={formData.projectLocation}
+          businessEmail={formData.businessEmail}
+          companyName={formData.companyName}
           errors={errors}
           updateFormData={updateFormData}
         />

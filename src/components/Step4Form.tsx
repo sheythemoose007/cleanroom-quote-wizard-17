@@ -73,6 +73,8 @@ const Step4Form: React.FC = () => {
           fullName={formData.fullName}
           phoneNumber={formData.phoneNumber}
           projectLocation={formData.projectLocation}
+          businessEmail={formData.businessEmail}
+          companyName={formData.companyName}
           errors={errors}
           updateFormData={updateFormData}
         />
