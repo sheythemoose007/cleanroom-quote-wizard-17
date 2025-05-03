@@ -448,6 +448,63 @@ export type Database = {
           },
         ]
       }
+      ffu_quote_requests: {
+        Row: {
+          airflow_requirements: string | null
+          application: string
+          business_email: string
+          company_name: string
+          created_at: string
+          ffu_quantity: string
+          ffu_size: string
+          filtration_level: string
+          full_name: string
+          has_consent: boolean
+          id: string
+          phone_number: string
+          project_location: string
+          specific_features: string[] | null
+          submission_time: string
+          user_agent: string | null
+        }
+        Insert: {
+          airflow_requirements?: string | null
+          application: string
+          business_email: string
+          company_name: string
+          created_at?: string
+          ffu_quantity: string
+          ffu_size: string
+          filtration_level: string
+          full_name: string
+          has_consent?: boolean
+          id?: string
+          phone_number: string
+          project_location: string
+          specific_features?: string[] | null
+          submission_time?: string
+          user_agent?: string | null
+        }
+        Update: {
+          airflow_requirements?: string | null
+          application?: string
+          business_email?: string
+          company_name?: string
+          created_at?: string
+          ffu_quantity?: string
+          ffu_size?: string
+          filtration_level?: string
+          full_name?: string
+          has_consent?: boolean
+          id?: string
+          phone_number?: string
+          project_location?: string
+          specific_features?: string[] | null
+          submission_time?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       gameplan_actions: {
         Row: {
           created_at: string

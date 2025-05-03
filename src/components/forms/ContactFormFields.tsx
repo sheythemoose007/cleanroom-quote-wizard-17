@@ -49,6 +49,36 @@ const ContactFormFields: React.FC<ContactFormFieldProps> = ({
           <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
         )}
       </div>
+
+      <div>
+        <Label htmlFor="businessEmail" className="text-base block mb-2">Business Email*</Label>
+        <Input
+          id="businessEmail"
+          type="email"
+          placeholder="your.name@company.com"
+          value={formData.businessEmail || ""}
+          onChange={(e) => updateFormData({ businessEmail: e.target.value })}
+          className="w-full"
+        />
+        {errors.businessEmail && (
+          <p className="text-red-500 text-sm mt-1">{errors.businessEmail}</p>
+        )}
+      </div>
+      
+      <div>
+        <Label htmlFor="companyName" className="text-base block mb-2">Company Name*</Label>
+        <Input
+          id="companyName"
+          type="text"
+          placeholder="Your company name"
+          value={formData.companyName || ""}
+          onChange={(e) => updateFormData({ companyName: e.target.value })}
+          className="w-full"
+        />
+        {errors.companyName && (
+          <p className="text-red-500 text-sm mt-1">{errors.companyName}</p>
+        )}
+      </div>
       
       <div className="md:col-span-2">
         <Label htmlFor="projectLocation" className="text-base block mb-2">Project Location (City, State/Country)*</Label>

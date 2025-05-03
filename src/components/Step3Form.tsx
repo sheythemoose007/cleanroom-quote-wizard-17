@@ -9,6 +9,7 @@ import ContactFormFields from './forms/ContactFormFields';
 import ConsentCheckbox from './forms/ConsentCheckbox';
 import HoneypotField from './forms/HoneypotField';
 import { toast } from '@/components/ui/sonner';
+import { supabase } from '@/integrations/supabase/client';
 
 const Step3Form: React.FC = () => {
   const { 
@@ -54,12 +55,37 @@ const Step3Form: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // For now, we'll simulate a successful submission
-      // In production, this would connect to Supabase
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Get browser user agent info
+      const userAgent = navigator.userAgent;
       
-      // Log the form data for now (in production, this would be sent to Supabase)
-      console.log("FFU Quote Request Data:", formData);
+      // Prepare data for Supabase
+      const quoteRequestData = {
+        ffu_quantity: formData.ffuQuantity,
+        ffu_size: formData.ffuSize,
+        filtration_level: formData.filtrationLevel,
+        airflow_requirements: formData.airflowRequirements || null,
+        specific_features: formData.specificFeatures,
+        application: formData.application,
+        full_name: formData.fullName,
+        business_email: formData.businessEmail,
+        phone_number: formData.phoneNumber,
+        company_name: formData.companyName,
+        project_location: formData.projectLocation,
+        has_consent: formData.consentGiven,
+        user_agent: userAgent
+      };
+      
+      // Submit to Supabase
+      const { error } = await supabase
+        .from('ffu_quote_requests')
+        .insert(quoteRequestData);
+      
+      if (error) {
+        console.error("Supabase error:", error);
+        throw new Error(error.message);
+      }
+      
+      console.log("FFU Quote Request successfully stored in Supabase");
       
       setSubmissionSuccess(true);
       toast.success("Your FFU quote request has been successfully submitted!");
