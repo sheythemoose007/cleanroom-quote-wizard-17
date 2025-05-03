@@ -617,6 +617,60 @@ export type Database = {
           },
         ]
       }
+      mobile_cleanroom_quotes: {
+        Row: {
+          business_email: string
+          cleanroom_size: string
+          company_name: string
+          consent_given: boolean
+          created_at: string
+          duration_of_use: string
+          full_name: string
+          id: string
+          iso_classification: string
+          phone_number: string
+          primary_application: string
+          project_location: string
+          specific_features: string | null
+          user_agent: string | null
+          website: string | null
+        }
+        Insert: {
+          business_email: string
+          cleanroom_size: string
+          company_name: string
+          consent_given?: boolean
+          created_at?: string
+          duration_of_use: string
+          full_name: string
+          id?: string
+          iso_classification: string
+          phone_number: string
+          primary_application: string
+          project_location: string
+          specific_features?: string | null
+          user_agent?: string | null
+          website?: string | null
+        }
+        Update: {
+          business_email?: string
+          cleanroom_size?: string
+          company_name?: string
+          consent_given?: boolean
+          created_at?: string
+          duration_of_use?: string
+          full_name?: string
+          id?: string
+          iso_classification?: string
+          phone_number?: string
+          primary_application?: string
+          project_location?: string
+          specific_features?: string | null
+          user_agent?: string | null
+          website?: string | null
+        }
+        Relationships: []
+      }
       monitoring_rules: {
         Row: {
           client_id: string
