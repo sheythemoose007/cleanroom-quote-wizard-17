@@ -6,11 +6,15 @@ import { ChevronRight } from 'lucide-react';
 interface FormControlsProps {
   onBack: () => void;
   isSubmitting: boolean;
+  submitLabel?: string;
+  backLabel?: string;
 }
 
 const FormControls: React.FC<FormControlsProps> = ({
   onBack,
-  isSubmitting
+  isSubmitting,
+  submitLabel = 'Submit',
+  backLabel = 'Back'
 }) => {
   return (
     <div className="flex justify-between pt-4">
@@ -20,13 +24,13 @@ const FormControls: React.FC<FormControlsProps> = ({
         variant="outline"
         className="border-cleanroom-500 text-cleanroom-500 hover:bg-cleanroom-50"
       >
-        Back
+        {backLabel}
       </Button>
       <Button 
         type="submit"
         disabled={isSubmitting}
         className="bg-cleanroom-500 hover:bg-cleanroom-600 text-white rounded-full p-2 md:p-3 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-x-1 group"
-        aria-label={isSubmitting ? 'Submitting...' : 'Get Quote'}
+        aria-label={isSubmitting ? 'Submitting...' : submitLabel}
       >
         {isSubmitting ? (
           <span className="animate-pulse">•••</span>
